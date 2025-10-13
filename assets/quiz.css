@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap');
+
+body {
+  background-image: url('bg.jpg');
+  background-size: cover;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+}
+
+#logo {
+  width: 15%;
+  padding: 0 0 12vh 0;
+  margin: 3% 0 0 15%;
+}
+
+main {
+    text-align: left;
+}
+
+main h3 {
+    text-align: center;
+    padding-top: 2em;
+    font-size: 3em;
+    text-wrap: wrap;
+    padding: 0 30%;
+}

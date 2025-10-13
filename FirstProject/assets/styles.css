@@ -45,7 +45,6 @@ footer p {
   margin-right: 200px;
   text-align: center;
 }
-
 #radio-btn {
   appearance: none;
   width: 20px;
@@ -54,7 +53,6 @@ footer p {
   background: transparent;
   margin: 0 20px 0 0;
 }
-
 #radio-btn:checked {
   background-color: #6a2776;
 }

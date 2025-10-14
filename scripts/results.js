@@ -26,9 +26,6 @@ const config = {
       legend: {
         display: false,
       },
-      ShadowPlugin: {
-        display: true,
-      },
     },
     cutout: "70%",
   },

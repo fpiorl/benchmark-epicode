@@ -1,6 +1,6 @@
-const ctx = document.getElementById("myChart")
-let correctAnswers = 60
-let wrongAnswers = 40
+const ctx = document.getElementById("myChart");
+let correctAnswers = 60;
+let wrongAnswers = 40;
 const config = {
   type: "doughnut",
   data: {
@@ -11,6 +11,7 @@ const config = {
         data: [wrongAnswers, correctAnswers],
         backgroundColor: ["#C2128D", "rgb(0, 255, 255)"],
         hoverOffset: 4,
+        borderColor: "transparent",
       },
     ],
   },
@@ -24,5 +25,5 @@ const config = {
     },
     cutout: "70%",
   },
-}
-myChart = new Chart(ctx, config)
+};
+myChart = new Chart(ctx, config);

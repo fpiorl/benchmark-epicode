@@ -53,3 +53,7 @@ footer {
 #disco-container {
   width: 30%;
 }
+
+#myChart{
+  border: none;
+}

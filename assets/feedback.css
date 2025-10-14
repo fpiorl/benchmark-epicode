@@ -12,17 +12,36 @@ body {
 }
 
 main {
-    text-align: center;
+  text-align: center;
 }
 h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    padding-bottom: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  padding-bottom: 20px;
 }
-p{
-    font-size: 1.7rem;
+p {
+  font-size: 1.7rem;
 }
 
-form img{
-    padding: 20px 9px 40px 9px;
+form img {
+  padding: 20px 6px 40px 6px;
+}
+
+input {
+  border: none;
+  border-bottom: 3px solid #c2128d;
+  background: transparent;
+margin-top: 30px;
+  width: 40vw;
+  padding:10px;
+  padding-left: 25px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+    margin-top: 50px;
+    color: black;
 }

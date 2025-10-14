@@ -15,6 +15,7 @@ wrongPercent.innerText =
   "%"
 
 const ctx = document.getElementById("myChart")
+ctx.globalCompositeOperation = "destination-over"
 let correctAnswersPercent = getQueryVariable("esatte")
 let wrongAnswersPercent = totalAnswers - correctAnswersPercent
 
@@ -70,3 +71,15 @@ wrongAnswers.innerText =
   "/" +
   totalAnswers +
   "risposte errate"
+
+const passedOrNot = document.getElementById("passedOrNot")
+if (getQueryVariable("esatte") >= 6) {
+  passedOrNot.innerHTML = `<h3>Congratulations!</h3>
+  <span>You passed the exam.</span>
+<br><br><br><br><p>We'll send you the certificate
+in few minutes.
+Check your email (including
+promotions / spam folder)</p>
+  
+  `
+}

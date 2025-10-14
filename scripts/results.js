@@ -2,6 +2,10 @@ const ctx = document.getElementById("myChart")
 let correctAnswersPercent = 80
 let wrongAnswersPercent = 100 - correctAnswersPercent
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 const config = {
   type: "doughnut",
 

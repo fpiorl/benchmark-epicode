@@ -1,18 +1,7 @@
-const ShadowPlugin = {
-  beforeDraw: (chart, args, options) => {
-    const { ctx } = chart
-    ctx.shadowColor = "rgba(0, 0, 0, 0.5)"
-    ctx.shadowBlur = 10
-    ctx.shadowOffsetX = 5
-    ctx.shadowOffsetY = 5
-  },
-}
 const ctx = document.getElementById("myChart")
 let correctAnswersPercent = 80
 let wrongAnswersPercent = 100 - correctAnswersPercent
-const ctx = document.getElementById("myChart");
-let correctAnswers = 60;
-let wrongAnswers = 40;
+
 const config = {
   type: "doughnut",
 
@@ -43,5 +32,5 @@ const config = {
     },
     cutout: "70%",
   },
-};
-myChart = new Chart(ctx, config);
+}
+myChart = new Chart(ctx, config)

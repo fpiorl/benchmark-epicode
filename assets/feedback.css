@@ -12,6 +12,7 @@ body {
 }
 
 main {
+  min-width: 1550px;
   text-align: center;
 }
 h1 {

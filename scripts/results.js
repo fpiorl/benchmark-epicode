@@ -1,6 +1,9 @@
 const ctx = document.getElementById("myChart")
 let correctAnswersPercent = 80
 let wrongAnswersPercent = 100 - correctAnswersPercent
+const ctx = document.getElementById("myChart");
+let correctAnswers = 60;
+let wrongAnswers = 40;
 const config = {
   type: "doughnut",
 
@@ -31,5 +34,5 @@ const config = {
     },
     cutout: "70%",
   },
-}
-myChart = new Chart(ctx, config)
+};
+myChart = new Chart(ctx, config);

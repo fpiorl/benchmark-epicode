@@ -10,10 +10,12 @@
   <body>
     <header>
       <img id="logo" src="./assets/epicode_logo.png" alt="logo" />
-      <div id="timer"></div>
+      <div id="timer">
+          <canvas id='myChart'></canvas>
+      </div>
     </header>
     <main>
-      <h3>
+      <h3 id=domanda>
         Question question question question Question question question question
       </h3>
       <div id="btn-container">
@@ -24,7 +26,9 @@
       </div>
     </main>
     <footer>
-      <p>QUESTION{}{}</p>
+        <p>QUESTION 1/</p><p class"totalQuestions">10</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts/quiz.js"></script>
   </body>
 </html>

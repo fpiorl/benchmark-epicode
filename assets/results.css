@@ -23,7 +23,7 @@ h1 {
   margin: 3% 0 0 30%;
   padding: 0 0 12vh 0;
   margin-left: 15em;
-  padding-bottom: 2em;
+  padding-bottom: 0;
 }
 #sottotitolo {
   font-size: 2em;
@@ -52,4 +52,24 @@ footer {
 }
 #disco-container {
   width: 30%;
+}
+#myChart {
+  display: inline-block;
+}
+#inside-disc {
+  text-align: center;
+  position: relative;
+  bottom: 320px;
+  width: 50%;
+  left: 140px;
+}
+.correct-and-wrong {
+  vertical-align: top;
+  margin-top: 0.4em;
+}
+.percentuali {
+  margin-top: 0;
+}
+.correct-and-wrong p {
+  margin-bottom: 0;
 }

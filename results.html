@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./FirstProject/assets/reset.css" />
+    <link rel="stylesheet" href="./assets/results.css" />
+    <title>Risultati</title>
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="./assets/epicode_logo.png" alt="logo" />
+    </header>
+    <main>
+      <div>
+        <h1>Results</h1>
+        <p id="sottotitolo">The summary of your answers:</p>
+      </div>
+      <section>
+        <div class="correct-and-wrong">
+          <p>Correct</p>
+          <p id="correctPercent" class="percentuali">66%</p>
+        </div>
+        <div id="disco-container">
+          <canvas id="myChart"> </canvas>
+          <p id="inside-disc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+            voluptas cupiditate quas veritatis dolores, repellendus, soluta fuga
+            quidem, impedit iusto necessitatibus amet? Doloremque molestias ab
+            eaque odio incidunt modi dolor.
+          </p>
+        </div>
+        <div class="correct-and-wrong" id="#wrong">
+          <p>Wrong</p>
+          <p id="wrongPercent" class="percentuali">34%</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <button class="bottone-bianco">RATE US</button>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts/results.js"></script>
+  </body>
+</html>

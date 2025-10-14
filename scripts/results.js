@@ -1,25 +1,41 @@
+const ShadowPlugin = {
+  beforeDraw: (chart, args, options) => {
+    const { ctx } = chart
+    ctx.shadowColor = "rgba(0, 0, 0, 0.5)"
+    ctx.shadowBlur = 10
+    ctx.shadowOffsetX = 5
+    ctx.shadowOffsetY = 5
+  },
+}
 const ctx = document.getElementById("myChart")
-let correctAnswers = 60
-let wrongAnswers = 40
+let correctAnswersPercent = 80
+let wrongAnswersPercent = 100 - correctAnswersPercent
 const config = {
   type: "doughnut",
+
   data: {
     labels: ["wrong answers", "correct answers"],
     datasets: [
       {
         label: "My First Dataset",
-        data: [wrongAnswers, correctAnswers],
+        data: [wrongAnswersPercent, correctAnswersPercent],
         backgroundColor: ["#C2128D", "rgb(0, 255, 255)"],
         hoverOffset: 4,
+        borderColor: "transparent",
       },
     ],
   },
   options: {
     responsive: true,
-    maintainAspectRatio: false,
+    //maintainAspectRatio: false,
+    aspectRatio: 1.2,
+
     plugins: {
       legend: {
         display: false,
+      },
+      ShadowPlugin: {
+        display: true,
       },
     },
     cutout: "70%",

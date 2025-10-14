@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./FirstProject/assets/reset.css" />
+    <link rel="stylesheet" href="./assets/reset.css" />
     <link rel="stylesheet" href="./assets/results.css" />
     <title>Risultati</title>
   </head>
@@ -13,26 +13,24 @@
     </header>
     <main>
       <div>
-        <h1>Results</h1>
+        <h1 class="titolo-bold">Results</h1>
         <p id="sottotitolo">The summary of your answers:</p>
       </div>
       <section>
         <div class="correct-and-wrong">
           <p>Correct</p>
-          <p id="correctPercent" class="percentuali">66%</p>
+          <p id="correctPercent" class="percentuali"></p>
+          <p id="correctAnswers"></p>
+          <p></p>
         </div>
         <div id="disco-container">
           <canvas id="myChart"> </canvas>
-          <p id="inside-disc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-            voluptas cupiditate quas veritatis dolores, repellendus, soluta fuga
-            quidem, impedit iusto necessitatibus amet? Doloremque molestias ab
-            eaque odio incidunt modi dolor.
-          </p>
+          <h3 id="passedOrNot">Congratulations!</h3>
         </div>
         <div class="correct-and-wrong" id="#wrong">
           <p>Wrong</p>
-          <p id="wrongPercent" class="percentuali">34%</p>
+          <p id="wrongPercent" class="percentuali"></p>
+          <p id="wrongAnswers"></p>
         </div>
       </section>
     </main>

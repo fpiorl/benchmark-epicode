@@ -1,6 +1,22 @@
+const totalAnswers = getQueryVariable("total")
+const correctPercent = document.getElementById("correctPercent")
+correctPercent.innerText =
+  Number(getQueryVariable("esatte") / totalAnswers).toFixed(4) * 100 +
+  " " +
+  "%" +
+  " "
+const wrongPercent = document.getElementById("wrongPercent")
+wrongPercent.innerText =
+  Number((totalAnswers - getQueryVariable("esatte")) / totalAnswers).toFixed(
+    4
+  ) *
+    100 +
+  " " +
+  "%"
+
 const ctx = document.getElementById("myChart")
-let correctAnswersPercent = 80
-let wrongAnswersPercent = 100 - correctAnswersPercent
+let correctAnswersPercent = getQueryVariable("esatte")
+let wrongAnswersPercent = totalAnswers - correctAnswersPercent
 
 const config = {
   type: "doughnut",
@@ -31,3 +47,26 @@ const config = {
   },
 }
 myChart = new Chart(ctx, config)
+function getQueryVariable(variable) {
+  let query = window.location.search.substring(1)
+  let vars = query.split("&")
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=")
+    if (decodeURIComponent(pair[0]) == variable) {
+      return decodeURIComponent(pair[1])
+    }
+  }
+  console.log("Query variable %s not found", variable)
+}
+console.log(getQueryVariable("esatte"))
+
+const correctAnswers = document.getElementById("correctAnswers")
+const wrongAnswers = document.getElementById("wrongAnswers")
+correctAnswers.innerText =
+  getQueryVariable("esatte") + "/" + totalAnswers + "risposte esatte"
+wrongAnswers.innerText =
+  totalAnswers -
+  getQueryVariable("esatte") +
+  "/" +
+  totalAnswers +
+  "risposte errate"

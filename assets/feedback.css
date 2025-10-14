@@ -1,0 +1,28 @@
+body {
+  background-image: url("bg.jpg");
+  background-size: cover;
+  color: white;
+  font-family: "Outfit", sans-serif;
+}
+
+#logo {
+  width: 15%;
+  padding: 0 0 12vh 0;
+  margin: 3% 0 0 15%;
+}
+
+main {
+    text-align: center;
+}
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+p{
+    font-size: 1.7rem;
+}
+
+form img{
+    padding: 20px 9px 40px 9px;
+}

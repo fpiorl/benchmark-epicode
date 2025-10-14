@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap");
+
+body {
+  background-image: url("bg.jpg");
+  background-size: cover;
+  margin: 3% 0 0 30%;
+  color: white;
+  font-family: "Outfit", sans-serif;
+}
+
+#logo {
+  width: 15%;
+  padding: 0 0 12vh 0;
+}
+span {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 5rem;
+  padding: 0 0 30px 0;
+}
+
+h2 {
+  color: #c2128d;
+  font-size: 1.5em;
+}
+
+p {
+  padding: 10px 0 40px 0;
+}
+
+li {
+  list-style-position: inside;
+  list-style-type: disc;
+  padding: 4px;
+}
+
+ul {
+  padding: 0 0 60px 5px;
+}
+
+footer p {
+  display: inline-block;
+  margin-right: 200px;
+  text-align: center;
+}
+#radio-btn {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgb(255, 255, 255);
+  background: transparent;
+  margin: 0 20px 0 0;
+}
+#radio-btn:checked {
+  background-color: #6a2776;
+}

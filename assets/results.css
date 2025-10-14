@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap");
-
+.titolo-bold {
+  font-weight: bold;
+}
 body {
   background-image: url("bg.jpg");
   background-size: cover;
@@ -29,6 +31,7 @@ h1 {
   font-size: 2em;
   margin-top: 0;
   text-align: center;
+  margin-bottom: 1em;
 }
 .bottone-bianco {
   font-size: 20px;
@@ -56,10 +59,10 @@ footer {
 #myChart {
   display: inline-block;
 }
-#inside-disc {
+#passedOrNot {
   text-align: center;
   position: relative;
-  bottom: 320px;
+  bottom: 380px;
   width: 50%;
   left: 140px;
 }
@@ -69,6 +72,7 @@ footer {
 }
 .percentuali {
   margin-top: 0;
+  font-weight: bold;
 }
 .correct-and-wrong p {
   margin-bottom: 0;

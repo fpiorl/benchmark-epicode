@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap");
+
+body {
+  background-image: url("bg.jpg");
+  background-size: cover;
+  color: white;
+  font-family: "Outfit", sans-serif;
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  font-size: 4em;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#logo {
+  width: 15%;
+  margin: 3% 0 0 30%;
+  padding: 0 0 12vh 0;
+  margin-left: 15em;
+  padding-bottom: 0;
+}
+#sottotitolo {
+  font-size: 2em;
+  margin-top: 0;
+  text-align: center;
+}
+.bottone-bianco {
+  font-size: 20px;
+  padding: 15px 40px;
+  font-weight: bold;
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+}
+.correct-and-wrong {
+  font-size: 4em;
+  display: inline-block;
+}
+
+#disco-container {
+  display: inline-block;
+}
+
+footer {
+  text-align: center;
+}
+#disco-container {
+  width: 30%;
+}
+#myChart {
+  display: inline-block;
+}
+#inside-disc {
+  text-align: center;
+  position: relative;
+  bottom: 320px;
+  width: 50%;
+  left: 140px;
+}
+.correct-and-wrong {
+  vertical-align: top;
+  margin-top: 0.4em;
+}
+.percentuali {
+  margin-top: 0;
+}
+.correct-and-wrong p {
+  margin-bottom: 0;
+}

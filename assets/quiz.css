@@ -62,11 +62,27 @@ header {
 #timer {
   width: 8em;
   position: absolute;
-  right: 260px;
-  top: 30px;
+  right: 200px;
+  top: 10px;
 }
 
 #myChart {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+}
+
+#seconds-text {
+  width: 8em;
+  position: absolute;
+  right: 206px;
+  top: 50px;
+  font-size: 10px;
+}
+
+#remaining-text {
+  width: 8em;
+  position: absolute;
+  right: 210px;
+  top: 100px;
+  font-size: 10px;
 }

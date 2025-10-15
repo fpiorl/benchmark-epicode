@@ -173,6 +173,7 @@ const startTimer = function (reset) {
   }, 250)
 }
 
+
 let quizQuestions = [...questions]
 
 let correct = 0

@@ -60,8 +60,10 @@ main p:first-of-type {
 .Allstars {
   margin-bottom: 27.2px;
   display: inline-block;
+  user-select: none;
 }
 
 svg {
   margin-left: 16.1795134343455666666666666666666666665555555555555555555555555555555555555555px;
+  cursor: pointer;
 }

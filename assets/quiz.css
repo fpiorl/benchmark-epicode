@@ -50,8 +50,23 @@ main h3 {
   background-color: #ae0087;
 }
 
-
 footer p {
-    padding-top: 90px;
-    text-align: center;
+  padding-top: 90px;
+  text-align: center;
+}
+
+header {
+  position: relative;
+}
+
+#timer {
+  width: 8em;
+  position: absolute;
+  right: 260px;
+  top: 30px;
+}
+
+#myChart {
+  width: 100px;
+  height: 100px;
 }

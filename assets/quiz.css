@@ -75,7 +75,7 @@ header {
   width: 8em;
   position: absolute;
   right: 206px;
-  top: 50px;
+  top: 53px;
   font-size: 10px;
 }
 
@@ -85,4 +85,12 @@ header {
   right: 210px;
   top: 100px;
   font-size: 10px;
+}
+
+#seconds-passed {
+  width: 8em;
+  position: absolute;
+  right: 40px;
+  top: 66px;
+  font-size: 30px;
 }

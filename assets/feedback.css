@@ -1,8 +1,8 @@
 body {
-  background-image: url('bg.jpg');
+  background-image: url("bg.jpg");
   background-size: cover;
   color: white;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
 #logo {
@@ -51,4 +51,7 @@ button {
   margin-top: 50px;
   color: black;
   cursor: pointer;
+}
+.star {
+  fill: aqua;
 }

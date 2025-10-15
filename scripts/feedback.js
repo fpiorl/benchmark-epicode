@@ -6,8 +6,11 @@ stars.forEach((stella, i) => {
     illumina(i + 1);
   });
   stella.addEventListener("click", () => {
+    if (litStars === i + 1) {
+      litStarts = 0;
+    } else {
       litStars = i + 1;
-      
+    }
   });
   stella.parentElement.addEventListener("mouseleave", () => {
     illumina(litStars);

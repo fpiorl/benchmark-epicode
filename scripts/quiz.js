@@ -141,7 +141,7 @@ const config = {
 myChart = new Chart(ctx, config);
 
 function updateChart(percentuale) {
-  myChart.data.datasets[0].data = [percentuale, 100 - percentuale];
+  myChart.data.datasets[0].data = [percentuale, 60 - percentuale];
   myChart.update();
 }
 
@@ -153,7 +153,7 @@ const resetTimer = function () {
 let currentTimer = null;
 const startTimer = function (reset) {
   clearInterval(currentTimer);
-  updateChart(100);
+  updateChart(60);
 
   let secs = 60; // domanda seconds o qualcosa dle genere
   const end = new Date().getTime() + secs * 1000;
@@ -162,12 +162,12 @@ const startTimer = function (reset) {
     // secondi passati
     const passati = end - new Date().getTime();
     let percentuale = (passati / 1000 / secs) * 100;
-    updateChart(percentuale);
+    updateChart(Math.floor(passati / 1000));
     let pSeconds = document.getElementById("seconds-passed");
     pSeconds.innerText = `${parseInt(passati / 1000)}`;
     if (passati <= 0 || resetTimerHandler === 1) {
       resetTimerHandler = 0;
-      updateChart(100);
+      updateChart(secs);
       clearInterval(currentTimer);
       // XXX tempo scaduto
       nextQuestion();

@@ -16,7 +16,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -92,26 +92,26 @@ const questions = [
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
-];
+]
 
 const shuffle = function (array) {
-  let currentIndex = array.length;
+  let currentIndex = array.length
 
   // While there remain elements to shuffle...
   while (currentIndex != 0) {
     // Pick a remaining element...
-    let randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
+    let randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex--
 
     // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
+    ;[array[currentIndex], array[randomIndex]] = [
       array[randomIndex],
       array[currentIndex],
-    ];
+    ]
   }
-};
+}
 
-const ctx = document.getElementById("myChart");
+const ctx = document.getElementById("myChart")
 
 const config = {
   type: "doughnut",
@@ -137,99 +137,99 @@ const config = {
     },
     cutout: "70%",
   },
-};
-myChart = new Chart(ctx, config);
+}
+myChart = new Chart(ctx, config)
 
 function updateChart(percentuale) {
-  myChart.data.datasets[0].data = [percentuale, 60 - percentuale];
-  myChart.update();
+  myChart.data.datasets[0].data = [percentuale, 60 - percentuale]
+  myChart.update()
 }
 
-let resetTimerHandler = 0;
+let resetTimerHandler = 0
 const resetTimer = function () {
-  resetTimerHandler = 1;
-};
+  resetTimerHandler = 1
+}
 
-let currentTimer = null;
+let currentTimer = null
 const startTimer = function (reset) {
-  clearInterval(currentTimer);
-  updateChart(60);
+  clearInterval(currentTimer)
+  updateChart(60)
 
-  let secs = 60; // domanda seconds o qualcosa dle genere
-  const end = new Date().getTime() + secs * 1000;
+  let secs = 60 // domanda seconds o qualcosa dle genere
+  const end = new Date().getTime() + secs * 1000
 
   currentTimer = setInterval(() => {
     // secondi passati
-    const passati = end - new Date().getTime();
-    let percentuale = (passati / 1000 / secs) * 100;
-    updateChart(Math.floor(passati / 1000));
-    let pSeconds = document.getElementById("seconds-passed");
-    pSeconds.innerText = `${parseInt(passati / 1000)}`;
+    const passati = end - new Date().getTime()
+    let percentuale = (passati / 1000 / secs) * 100
+    updateChart(Math.floor(passati / 1000))
+    let pSeconds = document.getElementById("seconds-passed")
+    pSeconds.innerText = `${parseInt(passati / 1000)}`
     if (passati <= 0 || resetTimerHandler === 1) {
-      resetTimerHandler = 0;
-      updateChart(secs);
-      clearInterval(currentTimer);
+      resetTimerHandler = 0
+      updateChart(secs)
+      clearInterval(currentTimer)
       // XXX tempo scaduto
-      nextQuestion();
+      nextQuestion()
     }
-  }, 250);
-};
+  }, 250)
+}
 
-let quizQuestions = [...questions];
+let quizQuestions = [...questions]
 
-let correct = 0;
-let index = 0;
+let correct = 0
+let index = 0
 
 const nextQuestion = function () {
-  startTimer();
-  const question = questions[index];
+  startTimer()
+  const question = questions[index]
 
   // check if last question
   if (question === questions[-1]) {
-    window.location.href = `/results.html?esatte=${correct}&total=${quizQuestions.length}`;
+    window.location.href = `/results.html?esatte=${correct}&total=${quizQuestions.length}`
   }
 
-  const domanda = document.getElementById("domanda");
-  const btnContainer = document.getElementById("btn-container");
-  btnContainer.innerHTML = "";
+  const domanda = document.getElementById("domanda")
+  const btnContainer = document.getElementById("btn-container")
+  btnContainer.innerHTML = ""
 
-  let incorrect = question["incorrect_answers"];
-  let btns = [];
+  let incorrect = question["incorrect_answers"]
+  let btns = []
 
   incorrect.forEach((btn) => {
-    const btnHtml = document.createElement("button");
-    btnHtml.innerText = btn;
-    btnHtml.classList.add("btn");
-    btns.push(btnHtml);
+    const btnHtml = document.createElement("button")
+    btnHtml.innerText = btn
+    btnHtml.classList.add("btn")
+    btns.push(btnHtml)
     btnHtml.onclick = function () {
-      updateChart(100);
-      index++;
-      nextQuestion();
-    };
-  });
+      updateChart(100)
+      index++
+      nextQuestion()
+    }
+  })
 
-  const btnHtml = document.createElement("button");
-  btnHtml.innerText = question["correct_answer"];
-  btnHtml.classList.add("btn");
+  const btnHtml = document.createElement("button")
+  btnHtml.innerText = question["correct_answer"]
+  btnHtml.classList.add("btn")
   btnHtml.onclick = function () {
-    updateChart(100);
-    correct++;
-    index++;
-    nextQuestion();
-  };
-  btns.push(btnHtml);
+    updateChart(100)
+    correct++
+    index++
+    nextQuestion()
+  }
+  btns.push(btnHtml)
 
-  shuffle(btns);
+  shuffle(btns)
 
-  btns.forEach((btn) => btnContainer.appendChild(btn));
+  btns.forEach((btn) => btnContainer.appendChild(btn))
 
-  domanda.innerText = question["question"];
-  const currentQuestion = document.getElementById("currentQuestion");
+  domanda.innerText = question["question"]
+  const currentQuestion = document.getElementById("currentQuestion")
   currentQuestion.innerHTML = `<p style="font-size:2em">QUESTION ${
     index + 1
-  } <span style="color:purple">/10</span></p>`;
-};
+  } <span style="color:purple">/10</span></p>`
+}
 
 window.onload = function () {
-  nextQuestion(0);
-};
+  nextQuestion(0)
+}

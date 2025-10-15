@@ -20,6 +20,6 @@ stars.forEach((stella, i) => {
 
 const illumina = function(numero){
     for (let i = 0; i < stars.length; i++) {
-        stars[i].firstElementChild.style.fill = ( i >= numero )? "black":"#00FFFF";
+        stars[i].firstElementChild.style.fill = ( i >= numero )? "rgb(11,17,59)":"#00FFFF";
     }
 }

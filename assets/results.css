@@ -36,14 +36,16 @@ h1 {
 }
 .bottone-bianco {
   font-size: 20px;
-  padding: 15px 40px;
+  padding: 20px 50px;
   font-weight: bold;
   color: white;
   border: 1px solid white;
   background-color: transparent;
+  margin-top: 60px;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 .correct-and-wrong {
-  font-size: 4em;
   display: inline-block;
 }
 
@@ -63,7 +65,7 @@ footer {
 #passedOrNot {
   text-align: center;
   position: relative;
-  bottom: 380px;
+  bottom: 500px;
   width: 50%;
   left: 140px;
   padding-top: 3em;
@@ -75,6 +77,7 @@ footer {
 .percentuali {
   margin-top: 0;
   font-weight: bold;
+  font-size: 3em;
 }
 .correct-and-wrong p {
   margin-bottom: 0;
@@ -84,4 +87,21 @@ h3 {
 }
 span {
   font-size: 1.7em;
+}
+#wrong {
+  font-size: 4em;
+  margin-top: 60px;
+}
+#correct {
+  font-size: 4em;
+  margin-top: 60px;
+}
+#wrongAnswers {
+  font-size: 2em;
+}
+#correctAnswers {
+  font-size: 2em;
+}
+#passedOrNot span {
+  color: rgb(0, 255, 255);
 }

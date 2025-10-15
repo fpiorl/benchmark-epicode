@@ -64,12 +64,13 @@ console.log(getQueryVariable("esatte"))
 const correctAnswers = document.getElementById("correctAnswers")
 const wrongAnswers = document.getElementById("wrongAnswers")
 correctAnswers.innerText =
-  getQueryVariable("esatte") + "/" + totalAnswers + "risposte esatte"
+  getQueryVariable("esatte") + "/" + totalAnswers + " " + "risposte esatte"
 wrongAnswers.innerText =
   totalAnswers -
   getQueryVariable("esatte") +
   "/" +
   totalAnswers +
+  " " +
   "risposte errate"
 
 const passedOrNot = document.getElementById("passedOrNot")
@@ -82,4 +83,16 @@ Check your email (including
 promotions / spam folder)</p>
   
   `
+} else {
+  passedOrNot.innerHTML = `<h3>You did shit!</h3>
+  <span>You didn't pass the exam.</span>
+<br><br><br><br><p>We'll not send you anything.
+</p>
+`
 }
+
+const bottoneBianco = document.getElementsByClassName("bottone-bianco")
+bottoneBianco[0].addEventListener("click", function (e) {
+  window.location.href = `/feedback.html
+`
+})

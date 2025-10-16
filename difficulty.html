@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/difficulty.css" />
+    <link rel="stylesheet" href="./assets/button.css" />
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="./assets/epicode_logo.png" alt="logo" />
+    </header>
+    <main>
+      <form action="./quiz.html">
+        <h1>
+          Choose the difficulty <br />
+          of the exam
+        </h1>
+
+        <label for="difficulty"></label>
+        <select name="difficulty" id="tendina" list="browsers">
+          <option value="easy">Easy 5</option>
+          <option value="medium">Medium 10</option>
+          <option value="hard">Hard 15</option>
+          <option value="stefano">Stefano 15 + 5s timer</option>
+        </select>
+        <button id="procedi">CHOOSE</button>
+      </form>
+    </main>
+  </body>
+</html>

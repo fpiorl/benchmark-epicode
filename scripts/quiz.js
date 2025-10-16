@@ -92,26 +92,228 @@ const questions = [
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
-]
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does GPU stand for?",
+    correct_answer: "Graphics Processing Unit",
+    incorrect_answers: [
+      "Graphical Performance Unit",
+      "General Processing Unit",
+      "Graphical Processor Utility",
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which of these is a programming language?",
+    correct_answer: "Python",
+    incorrect_answers: ["Windows", "HTTP", "HTML"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does RAM stand for?",
+    correct_answer: "Random Access Memory",
+    incorrect_answers: [
+      "Read Access Memory",
+      "Run All Memory",
+      "Randomized Algorithm Memory",
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which company developed the Windows operating system?",
+    correct_answer: "Microsoft",
+    incorrect_answers: ["Apple", "Google", "IBM"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does HTML stand for?",
+    correct_answer: "HyperText Markup Language",
+    incorrect_answers: [
+      "HighText Machine Language",
+      "Hyperloop Markup Language",
+      "HyperText Markdown Language",
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question:
+      "Which device is required for a computer to communicate over a network?",
+    correct_answer: "Network Interface Card",
+    incorrect_answers: ["Hard Drive", "CPU", "RAM"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does SSD stand for?",
+    correct_answer: "Solid State Drive",
+    incorrect_answers: [
+      "Secure Storage Device",
+      "Solid Storage Disk",
+      "Super Speed Disk",
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question:
+      "Which programming language is mainly used for web development on the client side?",
+    correct_answer: "JavaScript",
+    incorrect_answers: ["C++", "Python", "Go"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which of the following is an operating system?",
+    correct_answer: "Linux",
+    incorrect_answers: ["Oracle", "PostgreSQL", "Docker"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What is the main function of the ALU in a CPU?",
+    correct_answer: "Perform arithmetic and logic operations",
+    incorrect_answers: [
+      "Manage memory",
+      "Control network traffic",
+      "Store data permanently",
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which of these is a version control system?",
+    correct_answer: "Git",
+    incorrect_answers: ["Docker", "Kubernetes", "Jenkins"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which company created the Java programming language?",
+    correct_answer: "Sun Microsystems",
+    incorrect_answers: ["Microsoft", "Apple", "Oracle"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which of the following is NOT a type of computer memory?",
+    correct_answer: "JPEG",
+    incorrect_answers: ["RAM", "ROM", "Cache"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which port number does HTTP use by default?",
+    correct_answer: "80",
+    incorrect_answers: ["443", "22", "21"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does BIOS stand for?",
+    correct_answer: "Basic Input Output System",
+    incorrect_answers: [
+      "Binary Integrated Operating System",
+      "Basic Internal Output System",
+      "Boot Integrated Operating Software",
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which of the following is a markup language?",
+    correct_answer: "HTML",
+    incorrect_answers: ["Python", "C", "Java"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which of the following is an example of open-source software?",
+    correct_answer: "Linux",
+    incorrect_answers: ["Windows 10", "macOS", "Microsoft Office"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does HTTPS stand for?",
+    correct_answer: "HyperText Transfer Protocol Secure",
+    incorrect_answers: [
+      "HyperText Transfer Protocol Standard",
+      "HyperText Transmission Protocol Secure",
+      "HighText Transfer Protocol Secure",
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which data structure uses LIFO (Last In, First Out)?",
+    correct_answer: "Stack",
+    incorrect_answers: ["Queue", "Array", "Linked List"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which of the following is a database management system?",
+    correct_answer: "MySQL",
+    incorrect_answers: ["React", "Node.js", "TensorFlow"],
+  },
+];
+function getQueryVariable(variable) {
+  let query = window.location.search.substring(1);
+  let vars = query.split("&");
+  for (let i = 0; i < vars.length; i++) {
+    let pair = vars[i].split("=");
+    if (decodeURIComponent(pair[0]) == variable) {
+      return decodeURIComponent(pair[1]);
+    }
+  }
+  console.log("Query variable %s not found", variable);
+}
+const difficulty = getQueryVariable("difficulty");
 
 const shuffle = function (array) {
-  let currentIndex = array.length
+  let currentIndex = array.length;
 
   // While there remain elements to shuffle...
   while (currentIndex != 0) {
     // Pick a remaining element...
-    let randomIndex = Math.floor(Math.random() * currentIndex)
-    currentIndex--
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
 
     // And swap it with the current element.
-    ;[array[currentIndex], array[randomIndex]] = [
+    [array[currentIndex], array[randomIndex]] = [
       array[randomIndex],
       array[currentIndex],
-    ]
+    ];
   }
-}
+};
 
-const ctx = document.getElementById("myChart")
+const ctx = document.getElementById("myChart");
 
 const config = {
   type: "doughnut",
@@ -137,99 +339,116 @@ const config = {
     },
     cutout: "70%",
   },
-}
-myChart = new Chart(ctx, config)
+};
+myChart = new Chart(ctx, config);
 
 function updateChart(percentuale) {
-  myChart.data.datasets[0].data = [percentuale, 60 - percentuale]
-  myChart.update()
+  myChart.data.datasets[0].data = [percentuale, 60 - percentuale];
+  myChart.update();
 }
 
-let resetTimerHandler = 0
+let resetTimerHandler = 0;
 const resetTimer = function () {
-  resetTimerHandler = 1
-}
+  resetTimerHandler = 1;
+};
 
-let currentTimer = null
+let currentTimer = null;
 const startTimer = function (reset) {
-  clearInterval(currentTimer)
-  updateChart(60)
+  clearInterval(currentTimer);
+  updateChart(60);
 
-  let secs = 60 // domanda seconds o qualcosa dle genere
-  const end = new Date().getTime() + secs * 1000
+  let secs = 60; // domanda seconds o qualcosa dle genere
+  if (difficulty === "medium") {
+    secs = 45;
+  } else if (difficulty === "hard") {
+    secs = 30;
+  } else if (difficulty === "stefano") {
+    secs = 5;
+  }
+
+  const end = new Date().getTime() + secs * 1000;
 
   currentTimer = setInterval(() => {
     // secondi passati
-    const passati = end - new Date().getTime()
-    let percentuale = (passati / 1000 / secs) * 100
-    updateChart(Math.floor(passati / 1000))
-    let pSeconds = document.getElementById("seconds-passed")
-    pSeconds.innerText = `${parseInt(passati / 1000)}`
+    const passati = end - new Date().getTime();
+    let percentuale = (passati / 1000 / secs) * 100;
+    updateChart(Math.floor(passati / 1000));
+    let pSeconds = document.getElementById("seconds-passed");
+    pSeconds.innerText = `${parseInt(passati / 1000)}`;
     if (passati <= 0 || resetTimerHandler === 1) {
-      resetTimerHandler = 0
-      updateChart(secs)
-      clearInterval(currentTimer)
+      resetTimerHandler = 0;
+      updateChart(secs);
+      clearInterval(currentTimer);
       // XXX tempo scaduto
-      nextQuestion()
+      nextQuestion();
     }
-  }, 250)
+  }, 250);
+};
+
+let quizQuestions = [...questions];
+
+if (difficulty === "easy") {
+  quizQuestions = quizQuestions.slice(0, 5);
+} else if (difficulty === "medium") {
+  quizQuestions = quizQuestions.slice(0, 10);
+} else if (difficulty === "hard") {
+  quizQuestions = quizQuestions.slice(0, 15);
+} else if (difficulty === "stefano") {
+  quizQuestions = quizQuestions.slice(0, 15);
 }
 
-let quizQuestions = [...questions]
-
-let correct = 0
-let index = 0
-
+let correct = 0;
+let index = 0;
 const nextQuestion = function () {
-  startTimer()
-  const question = questions[index]
+  startTimer();
+  const question = quizQuestions[index];
 
   // check if last question
-  if (question === questions[-1]) {
-    window.location.href = `/results.html?esatte=${correct}&total=${quizQuestions.length}`
+  if (question === quizQuestions[-1]) {
+    window.location.href = `/results.html?esatte=${correct}&total=${quizQuestions.length}`;
   }
 
-  const domanda = document.getElementById("domanda")
-  const btnContainer = document.getElementById("btn-container")
-  btnContainer.innerHTML = ""
+  const domanda = document.getElementById("domanda");
+  const btnContainer = document.getElementById("btn-container");
+  btnContainer.innerHTML = "";
 
-  let incorrect = question["incorrect_answers"]
-  let btns = []
+  let incorrect = question["incorrect_answers"];
+  let btns = [];
 
   incorrect.forEach((btn) => {
-    const btnHtml = document.createElement("button")
-    btnHtml.innerText = btn
-    btnHtml.classList.add("btn")
-    btns.push(btnHtml)
+    const btnHtml = document.createElement("button");
+    btnHtml.innerText = btn;
+    btnHtml.classList.add("btn");
+    btns.push(btnHtml);
     btnHtml.onclick = function () {
-      updateChart(100)
-      index++
-      nextQuestion()
-    }
-  })
+      updateChart(100);
+      index++;
+      nextQuestion();
+    };
+  });
 
-  const btnHtml = document.createElement("button")
-  btnHtml.innerText = question["correct_answer"]
-  btnHtml.classList.add("btn")
+  const btnHtml = document.createElement("button");
+  btnHtml.innerText = question["correct_answer"];
+  btnHtml.classList.add("btn");
   btnHtml.onclick = function () {
-    updateChart(100)
-    correct++
-    index++
-    nextQuestion()
-  }
-  btns.push(btnHtml)
+    updateChart(100);
+    correct++;
+    index++;
+    nextQuestion();
+  };
+  btns.push(btnHtml);
 
-  shuffle(btns)
+  shuffle(btns);
 
-  btns.forEach((btn) => btnContainer.appendChild(btn))
+  btns.forEach((btn) => btnContainer.appendChild(btn));
 
-  domanda.innerText = question["question"]
-  const currentQuestion = document.getElementById("currentQuestion")
+  domanda.innerText = question["question"];
+  const currentQuestion = document.getElementById("currentQuestion");
   currentQuestion.innerHTML = `<p style="font-size:2em">QUESTION ${
     index + 1
-  } <span style="color:purple">/10</span></p>`
-}
+  } <span style="color:purple">/${quizQuestions.length}</span></p>`;
+};
 
 window.onload = function () {
-  nextQuestion(0)
-}
+  nextQuestion(0);
+};

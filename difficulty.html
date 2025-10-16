@@ -18,15 +18,14 @@
           Choose the difficulty <br />
           of the exam
         </h1>
-        <input name="difficulty" id="tendina" list="browsers" />
 
-        <datalist id="browsers">
-          <option value="Easy">5</option>
-          <option value="Medium">10</option>
-          <option value="Hard">15</option>
-          <option value="Stefano">300</option>
-        </datalist>
-
+        <label for="difficulty"></label>
+        <select name="difficulty" id="tendina" list="browsers">
+          <option value="easy">Easy 5</option>
+          <option value="medium">Medium 10</option>
+          <option value="hard">Hard 15</option>
+          <option value="stefano">Stefano 15 + 10s timer</option>
+        </select>
         <button id="procedi">CHOOSE</button>
       </form>
     </main>

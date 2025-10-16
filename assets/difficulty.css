@@ -35,4 +35,19 @@ h1 {
 
 #tendina {
   margin-right: 150px;
+  border: none;
+  border-bottom: 3px solid #c2128d;
+  background: transparent;
+  margin-top: 30px;
+  width: 15vw;
+  padding: 10px;
+  padding-left: 25px;
+  color: white;
+  outline: none;
+  border-radius: 10px;
+}
+
+option {
+  background-color: #c2128d;
+  outline: none;
 }

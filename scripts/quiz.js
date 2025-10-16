@@ -417,6 +417,11 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+const disableAll = function(btns){
+    btns.forEach(btn => btn.disabled = true) 
+}
+
+let allButtons = []
 
 const nextQuestion = function () {
 
@@ -437,28 +442,30 @@ const nextQuestion = function () {
 
     incorrect.forEach((btn) => {
         const btnHtml = document.createElement("button");
+        allButtons.push(btnHtml)
         btnHtml.innerText = btn;
         btnHtml.classList.add("btn");
         btns.push(btnHtml);
         btnHtml.onclick = async function () {
+            disableAll(allButtons)
             updateChart(tempo);
             index++;
             btnHtml.style.backgroundColor = 'red'
-            this.disabled=true;
             await sleep(1000);
             nextQuestion();
         };
     });
 
     const btnHtml = document.createElement("button");
+    allButtons.push(btnHtml)
     btnHtml.innerText = question["correct_answer"];
     btnHtml.classList.add("btn");
     btnHtml.onclick = async function () {
+        disableAll(allButtons)
         updateChart(tempo);
         correct++;
         index++;
         btnHtml.style.backgroundColor = 'green'
-        this.disabled=true;
         await sleep(1000);
         nextQuestion();
     };

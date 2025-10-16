@@ -45,9 +45,15 @@ h1 {
   color: white;
   outline: none;
   border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#tendina:hover {
+  background-color: #9696960f;
 }
 
 option {
-  background-color: #c2128d;
-  outline: none;
+  background-color: #0c113b;
+  font-weight: bold;
 }

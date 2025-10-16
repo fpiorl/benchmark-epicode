@@ -1,16 +1,13 @@
 const totalAnswers = getQueryVariable("total");
 const correctPercent = document.getElementById("correctPercent");
 correctPercent.innerText =
-  Number(getQueryVariable("esatte") / totalAnswers).toFixed(4) * 100 +
+  Math.round((getQueryVariable("esatte") / totalAnswers)*10000)/100+ 
   " " +
   "%" +
   " ";
 const wrongPercent = document.getElementById("wrongPercent");
 wrongPercent.innerText =
-  Number((totalAnswers - getQueryVariable("esatte")) / totalAnswers).toFixed(
-    4
-  ) *
-    100 +
+  Math.round(10000 - (getQueryVariable("esatte") / totalAnswers)*10000)/100+ 
   " " +
   "%";
 

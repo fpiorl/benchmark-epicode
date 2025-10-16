@@ -444,6 +444,7 @@ const nextQuestion = function () {
             updateChart(tempo);
             index++;
             btnHtml.style.backgroundColor = 'red'
+            this.disabled=true;
             await sleep(1000);
             nextQuestion();
         };
@@ -457,6 +458,7 @@ const nextQuestion = function () {
         correct++;
         index++;
         btnHtml.style.backgroundColor = 'green'
+        this.disabled=true;
         await sleep(1000);
         nextQuestion();
     };

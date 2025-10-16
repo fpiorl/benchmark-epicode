@@ -440,6 +440,8 @@ const nextQuestion = function () {
   let incorrect = question["incorrect_answers"]
   let btns = []
 
+  const btnHtml = document.createElement("button")
+  const corretto = btnHtml
   incorrect.forEach((btn) => {
     const btnHtml = document.createElement("button")
     allButtons.push(btnHtml)
@@ -451,12 +453,12 @@ const nextQuestion = function () {
       updateChart(tempo)
       index++
       btnHtml.style.backgroundColor = "red"
+      corretto.style.backgroundColor = "green"
       await sleep(1000)
       nextQuestion()
     }
   })
 
-  const btnHtml = document.createElement("button")
   allButtons.push(btnHtml)
   btnHtml.innerText = question["correct_answer"]
   btnHtml.classList.add("btn")

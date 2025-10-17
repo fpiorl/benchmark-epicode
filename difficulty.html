@@ -19,15 +19,24 @@
           of the exam
         </h1>
 
-        <label for="difficulty"></label>
-        <select name="difficulty" id="tendina" list="browsers">
-          <option value="easy">Easy 5</option>
-          <option value="medium">Medium 10</option>
-          <option value="hard">Hard 15</option>
-          <option value="stefano">Stefano 15 + 5s timer</option>
-        </select>
-        <button id="procedi">CHOOSE</button>
+        <div id="container" list="browsers">
+          <p id="tendina">Select here</p>
+          <input
+            name="difficulty"
+            type="text"
+            style="display: none"
+            id="hidden-tendina"
+          />
+          <ul class="options">
+            <li data-value="easy">Easy 5</li>
+            <li data-value="medium">Medium 10</li>
+            <li data-value="hard">Hard 15</li>
+            <li data-value="stefano">Stefano 15 + 5s timer</li>
+          </ul>
+          <button id="procedi">CHOOSE</button>
+        </div>
       </form>
     </main>
+    <script src="./scripts/difficulty.js"></script>
   </body>
 </html>

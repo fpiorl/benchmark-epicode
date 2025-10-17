@@ -430,7 +430,7 @@ const nextQuestion = function () {
 
   // check if last question
   if (question === quizQuestions[-1]) {
-    window.location.href = `/results.html?esatte=${correct}&total=${quizQuestions.length}`
+    window.location.href = `./results.html?esatte=${correct}&total=${quizQuestions.length}`
   }
 
   const domanda = document.getElementById("domanda")
@@ -454,7 +454,7 @@ const nextQuestion = function () {
       index++
       btnHtml.style.backgroundColor = "red"
       corretto.style.backgroundColor = "green"
-      await sleep(1000)
+      await sleep(1500)
       nextQuestion()
     }
   })
@@ -468,7 +468,7 @@ const nextQuestion = function () {
     correct++
     index++
     btnHtml.style.backgroundColor = "green"
-    await sleep(1000)
+    await sleep(1500)
     nextQuestion()
   }
   btns.push(btnHtml)

@@ -1,25 +1,7 @@
-let litStars = 0;
-
-const stars = document.querySelectorAll(".star");
-stars.forEach((stella, i) => {
-    stella.addEventListener("mouseenter", (event) => {
-        illumina(litStars > 0? litStars: i+1)
-    });
-    stella.addEventListener("click", () => {
-        if (litStars === i+1){
-            litStars = 0
-            illumina(0) 
-        } else {
-            litStars = i+1;
-        }
-    });
-    stella.parentElement.addEventListener("mouseleave", () => {
-        illumina(litStars)
-    });
+const illumina = numero => stars.forEach((_, i) => stars[i].firstElementChild.style.fill = i >= numero ? "#013":"#0ff");
+let lit = 0, stars = document.querySelectorAll(".star"); 
+stars.forEach((star, i) => {
+    star.addEventListener("mouseenter", () => illumina(i+1>lit?i+1:lit));
+    star.addEventListener("click", () => lit=(i+1)*+!(lit===i+1));
 });
-
-const illumina = function(numero){
-    for (let i = 0; i < stars.length; i++) {
-        stars[i].firstElementChild.style.fill = ( i >= numero )? "rgb(11,17,59)":"#00FFFF";
-    }
-}
+stars[0].parentElement.addEventListener("mouseleave", () => illumina(lit));
